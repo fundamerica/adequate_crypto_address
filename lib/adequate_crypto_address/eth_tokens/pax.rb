@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Pax < Eth
+  class PAX < Eth
     ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+    ALPHABET_TYPE = :pax
   end
-  PaxosStandard = Pax
+  PaxosStandard = PAX
 end

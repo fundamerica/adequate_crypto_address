@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Usds < Eth
+  class USDS < Eth
     ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+    ALPHABET_TYPE = :usds
   end
-  StablyUSD = Usds
+  StablyUSD = USDS
 end

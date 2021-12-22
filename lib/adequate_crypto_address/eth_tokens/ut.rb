@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Ut < Eth
+  # 7UT
+  class UT < Eth
     ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+    ALPHABET_TYPE = :ut
   end
-  UtilityToken = Ut
+  UtilityToken = UT
 end

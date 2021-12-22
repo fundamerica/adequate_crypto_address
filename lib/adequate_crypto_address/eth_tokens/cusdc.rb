@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Cusdc < Eth
+  class CUSDC < Eth
     ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+    ALPHABET_TYPE = :cusdc
   end
-  CompoundUSDCoin = Cusdc
+  CompoundUSDCoin = CUSDC
 end
