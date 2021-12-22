@@ -21,7 +21,7 @@ module AdequateCryptoAddress
     def valid_prefix?
       /\A1/.match?(address)
       # https://wiki.polkadot.network/docs/learn-accounts
-      # length check
+      # length check?
     end
   end
   Polkadot = Dot
