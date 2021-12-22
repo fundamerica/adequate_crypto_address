@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Cdai < Eth
+  class CDAI < Eth
     ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+    ALPHABET_TYPE = :cdai
   end
-  CompoundDai = Cdai
+  CompoundDAI = CDAI
 end

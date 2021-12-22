@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Agx < Eth
+  class AGX < Eth
     ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+    ALPHABET_TYPE = :agx
   end
-  AgxCoin = Agx
+  AGXCoin = AGX
 end

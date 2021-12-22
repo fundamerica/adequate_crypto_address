@@ -117,7 +117,15 @@ RSpec.describe(AdequateCryptoAddress) do
     end
 
     context 'EOS' do
-      # TODO
+      it 'validates correct addresses' do
+        expect(described_class).to be_valid('thisiseos123', 'eos')
+        expect(described_class).to be_valid('eos123thisis', :eos)
+      end
+
+      it 'validates wrong addresses' do
+        expect(described_class).not_to be_valid('thisisnotEOS', :eos)
+        expect(described_class).not_to be_valid('EOSthisisnot', 'eos')
+      end
     end
 
     context 'Ethereum' do

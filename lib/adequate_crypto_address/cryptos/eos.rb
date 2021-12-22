@@ -7,7 +7,7 @@ module AdequateCryptoAddress
     end
 
     def valid?(address)
-      if !valid_prefix?
+      if !valid_prefix? && !valid_length?
         false
       else
         raise "Invalid address: #{address}" unless valid_prefix?
@@ -18,11 +18,13 @@ module AdequateCryptoAddress
 
     private
 
+    def valid_length?
+      address.to_s.length == 12
+    end
+
     def valid_prefix?
-      # not too sure about this one
-      /(?i)^[a-z1-5]$/.match?(address)
-      # https://github.com/EOSIO/eosjs-ecc
-      # length check
+      /^[a-z1-5]*$/.match?(address)
+      # https://hackernoon.com/the-ultimate-guide-to-understanding-eos-accounts-9r3pi35v4
     end
   end
   EOS = Eos

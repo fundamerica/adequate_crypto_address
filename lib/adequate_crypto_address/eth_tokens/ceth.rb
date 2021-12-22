@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Ceth < Eth
+  class CETH < Eth
     ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+    ALPHABET_TYPE = :ceth
   end
-  CompoundEther = Ceth
+  CompoundEther = CETH
 end
