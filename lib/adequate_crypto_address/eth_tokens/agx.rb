@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class AGX < Eth
-    ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
-    ALPHABET_TYPE = :agx
+  module EthTokens
+    class AGX < Eth
+      ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+      ALPHABET_TYPE = :agx
+    end
+    AGXCoin = AGX
   end
-  AGXCoin = AGX
 end

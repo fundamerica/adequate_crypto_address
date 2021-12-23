@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class COMP < Eth
-    ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
-    ALPHABET_TYPE = :comp
+  module EthTokens
+    class COMP < Eth
+      ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+      ALPHABET_TYPE = :comp
+    end
+    Compound = COMP
   end
-  Compound = COMP
 end

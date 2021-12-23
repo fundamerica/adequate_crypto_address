@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class WBTC < Eth
-    ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
-    ALPHABET_TYPE = :wbtc
+  module EthTokens
+    class WBTC < Eth
+      ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+      ALPHABET_TYPE = :wbtc
+    end
+    WrappedBitcoin = WBTC
   end
-  WrappedBitcoin = WBTC
 end
