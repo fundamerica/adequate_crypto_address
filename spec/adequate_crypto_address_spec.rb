@@ -2,23 +2,6 @@
 
 RSpec.describe(AdequateCryptoAddress) do
   describe '.valid?' do
-    context 'Cardano' do
-      it 'validates Byron era addresses' do
-        expect(described_class).to be_valid('Ae2FFzCqrhso9PfdXvRQ7hcaR1g6rDFc1VMXhthCpEuqioSh4bRKNizwvwUx6sdxSAUFmDr1v8nRkQJ7wojoyun68HsfMD7hLm7CfCKT', 'ada')
-        expect(described_class).to be_valid('DdzFFzCqrhso9PfdXvRQ7hcaR1g6rDFc1VMXhthCpEuqioSh4bRKNizwvwUx6sdxSAUFmDr1v8nRkQJ7wojoyun68HsfMD7hLm7CfCKT', :ada)
-      end
-
-      it 'validates Shelley era addresses' do
-        expect(described_class).to be_valid('addr1qyuudk3newmzjwcz4eyypnpcexvcyww4znuw5g40dlt7fdeecmdr8jak9yas9tjggrxr3jvesgua298cag723m7hujmspd3k22', 'ada')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('ee2FFzCqrhso9PfdXvRQ7hcaR1g6rDFc1VMXhthCpEuqioSh4bRKNizwvwUx6sdxSAUFmDr1v8nRkQJ7wojoyun68HsfMD7hLm7CfCKT', :ada)
-        expect(described_class).not_to be_valid('112FFzCqrhso9PfdXvRQ7hcaR1g6rDFc1VMXhthCpEuqioSh4bRKNizwvwUx6sdxSAUFmDr1v8nRkQJ7wojoyun68HsfMD7hLm7CfCKT', 'ada')
-        expect(described_class).not_to be_valid('1P2r1qyuudk3newmzjwcz4eyypnpcexvcyww4znuw5g40dlt7fdeecmdr8jak9yas9tjggrxr3jvesgua298cag723m7hujmspd3k22', :ada)
-      end
-    end
-
     context 'Bitcoin' do
       it 'validates hash160 addresses' do
         expect(described_class).to be_valid('12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP', 'bitcoin')
@@ -100,60 +83,6 @@ RSpec.describe(AdequateCryptoAddress) do
       end
     end
 
-    context 'BitcoinSV' do
-      it 'validates addresses' do
-        expect(described_class).to be_valid('qzlqpln4k995wsjlhl9dcw6kacwv06ka6580wavplr', :bsv)
-        expect(described_class).to be_valid('pzlqpln4k995wsjlhl9dcw6kacwv06ka6580wavplr', 'bsv')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('4zlqpln4k995wsjlhl9dcw6kacwv06ka6580wavplr', :bsv)
-        expect(described_class).not_to be_valid('Uzlqpln4k995wsjlhl9dcw6kacwv06ka6580wavplr', 'bsv')
-      end
-
-      it 'validates wrong addresses' do
-        # TODO
-      end
-    end
-
-    context 'EOS' do
-      it 'validates correct addresses' do
-        expect(described_class).to be_valid('thisiseos123', 'eos')
-        expect(described_class).to be_valid('eos123thisis', :eos)
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('thisisnotEOS', :eos)
-        expect(described_class).not_to be_valid('EOSthisisnot', 'eos')
-      end
-    end
-
-    context 'Ethereum' do
-      it 'validates addresses' do
-        expect(described_class).to be_valid('0xE37c0D48d68da5c5b14E5c1a9f1CFE802776D9FF', 'ethereum')
-        expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :ethereum)
-        expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', :ETH)
-        expect(described_class).to be_valid('0xc6d9d2cd449a754c494264e1809c50e34d64562b', 'ETH')
-        expect(described_class).to be_valid('0x52908400098527886E0F7030069857D2E4169EE7', 'ETH')
-        expect(described_class).to be_valid('0x8617E340B3D01FA5F11F306F4090FD50E238070D', 'ETH')
-        expect(described_class).to be_valid('0xde709f2102306220921060314715629080e2fb77', 'ETH')
-      end
-
-      it 'validates without prefixes addresses' do
-        expect(described_class).to be_valid('27b1fdb04752bbc536007a920d24acb045561c26', 'ETH')
-        expect(described_class).to be_valid('5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed', 'ETH')
-        expect(described_class).to be_valid('fB6916095ca1df60bB79Ce92cE3Ea74c37c5d359', 'ETH')
-        expect(described_class).to be_valid('dbF03B407c01E7cD3CBea99509d93f8DDDC8C6FB', 'ETH')
-        expect(described_class).to be_valid('D1220A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'ETH')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('wrong', :ETH)
-        expect(described_class).not_to be_valid('0xD1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'ETH')
-        expect(described_class).not_to be_valid('a10354276d2fC74ee91e37D085d35748613f4748', :ethereum)
-      end
-    end
-
     context 'Ripple' do
       it 'validates addresses' do
         expect(described_class).to be_valid('rPMLwSwyyULN2acf5JKB1nj8F8Eu8pVMV8', :ripple)
@@ -171,30 +100,6 @@ RSpec.describe(AdequateCryptoAddress) do
       end
     end
 
-    context 'TerraLuna' do
-      it 'validates correct addresses' do
-        expect(described_class).to be_valid('terramxn2asrjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', :luna)
-        expect(described_class).to be_valid('terraxyz2asmjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', 'luna')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('t3rr41mxn2asrjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', :luna)
-        expect(described_class).not_to be_valid('5e8ra1mxn2asrjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', 'luna')
-      end
-    end
-
-    context 'TerraUSD' do
-      it 'validates correct addresses' do
-        expect(described_class).to be_valid('terra1mxn2asrjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', :ust)
-        expect(described_class).to be_valid('terra1xyz2asmjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', 'ust')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('t3rr41mxn2asrjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', :ust)
-        expect(described_class).not_to be_valid('5e8ra1mxn2asrjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', 'ust')
-      end
-    end
-
     context 'Dash' do
       it 'validates addresses' do
         expect(described_class).to be_valid('Xx4dYKgz3Zcv6kheaqog3fynaKWjbahb6b', :dash)
@@ -208,18 +113,6 @@ RSpec.describe(AdequateCryptoAddress) do
         expect(described_class).not_to be_valid('yPv7h2i8v3dJ1fSH4L3x91JSJszjdbsJJA', :dash)
         expect(described_class).not_to be_valid('XqMkVUZnqe3w4xvgdZRtZoe7gMitDudGs4', 'dash', :test)
         expect(described_class).not_to be_valid('yPv7h2i8v3dJjfSH4L3x91JSJszjdbsJJA', :DASH, :prod)
-      end
-    end
-
-    context 'Doge' do
-      it 'validates addresses' do
-        expect(described_class).to be_valid('DLCDJhnh6aGotar6b182jpzbNEyXb3C361', :doge)
-        expect(described_class).to be_valid('DBXu2kgc3xtvCUWFcxFE3r9hEYgmuaaCyD', 'DASH')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).to be_valid('DlCDJhnh6aGotar6b182jpzbNEyXb3C361', :doge)
-        expect(described_class).to be_valid('dBXu2kgc3xtvCUWFcxFE3r9hEYgmuaaCyD', 'DASH')
       end
     end
 
@@ -257,30 +150,6 @@ RSpec.describe(AdequateCryptoAddress) do
         expect(described_class).not_to be_valid('t1Y9yhDa5XEjgfnTgZoKddeSiEN1aoLkQxq', :zcash)
         expect(described_class).not_to be_valid('t3Yz22vK5z2LcKEdg16Yv4FFneEL1zg9ojd', :ZEC)
         expect(described_class).not_to be_valid('t2YNzUUx8mWBCRYPRezvA363EYXyEpHokyi', :zcash, :test)
-      end
-    end
-
-    context 'Lumens' do
-      it 'validates correct addresses' do
-        expect(described_class).to be_valid('GAVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2CB', :xlm)
-        expect(described_class).to be_valid('GAVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2TY', 'xlm')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('0AVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2CB', :xlm)
-        expect(described_class).not_to be_valid('yAVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2CB', 'xlm')
-      end
-    end
-
-    context 'Polkadot' do
-      it 'validates correct addresses' do
-        expect(described_class).to be_valid('1dvnazYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', :dot)
-        expect(described_class).to be_valid('1zxcvoYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', 'dot')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('PdvnazYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', :dot)
-        expect(described_class).not_to be_valid('9dvnazYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', 'dot')
       end
     end
   end
