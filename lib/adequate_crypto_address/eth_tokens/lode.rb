@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class LODE < Eth
+    class Lode < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :lode
     end
-    LodeToken = LODE
+    LodeToken = Lode
   end
 end

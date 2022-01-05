@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class AXS < Eth
+    class Axs < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :axs
     end
-    AxieInfinityShard = AXS
+    AxieInfinityShard = Axs
   end
 end

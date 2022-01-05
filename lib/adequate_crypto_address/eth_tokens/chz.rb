@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class CHZ < Eth
+    class Chz < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :chz
     end
-    ChiliZ = CHZ
+    ChiliZ = Chz
   end
 end

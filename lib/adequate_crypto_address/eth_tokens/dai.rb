@@ -2,11 +2,11 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class DAI < Eth
+    class Dai < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :dai
     end
-    DAI = DAI
+    Dai = Dai
   end
 end
 

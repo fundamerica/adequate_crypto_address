@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class MUSDC < Eth
+    class Musdc < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :musdc
     end
-    DMMUSDC = MUSDC
+    DmmUsdc = Musdc
   end
 end

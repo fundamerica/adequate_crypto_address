@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class COMP < Eth
+    class Comp < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :comp
     end
-    Compound = COMP
+    Compound = Comp
   end
 end

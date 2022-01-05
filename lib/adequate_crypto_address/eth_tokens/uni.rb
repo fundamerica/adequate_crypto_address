@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class UNI < Eth
+    class Uni < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :uni
     end
-    Uniswap = UNI
+    Uniswap = Uni
   end
 end

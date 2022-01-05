@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class OKB < Eth
+    class Okb < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :okb
     end
-    OKBlockchain = OKB
+    OkBlockchain = Okb
   end
 end

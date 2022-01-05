@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class PAX < Eth
+    class Pax < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :pax
     end
-    PaxosStandard = PAX
+    PaxosStandard = Pax
   end
 end

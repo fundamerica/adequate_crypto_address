@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class DPI < Eth
+    class Dpi < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :dpi
     end
-    DeFiPulseIndex = DPI
+    DeFiPulseIndex = Dpi
   end
 end

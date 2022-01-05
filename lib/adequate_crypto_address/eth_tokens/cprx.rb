@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class CPRX < Eth
+    class Cprx < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :cprx
     end
-    CryptoPerx = CPRX
+    CryptoPerx = Cprx
   end
 end

@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class MATIC < Eth
+    class Matic < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :matic
     end
-    PolygonMaticToken = MATIC
+    PolygonMaticToken = Matic
   end
 end

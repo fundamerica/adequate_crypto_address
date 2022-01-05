@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class GYEN < Eth
+    class Gyen < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :gyen
     end
-    GMOJapaneseYen = GYEN
+    GmoJapaneseYen = Gyen
   end
 end

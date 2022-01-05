@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class USDS < Eth
+    class Usds < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :usds
     end
-    StablyUSD = USDS
+    StablyUsd = Usds
   end
 end

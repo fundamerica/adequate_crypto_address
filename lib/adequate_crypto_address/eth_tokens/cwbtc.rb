@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class CWBTC < Eth
+    class Cwbtc < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :cwbtc
     end
-    CompoundWrappedBTC = CWBTC
+    CompoundWrappedBtc = Cwbtc
   end
 end

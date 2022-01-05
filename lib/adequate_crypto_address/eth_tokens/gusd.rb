@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class GUSD < Eth
+    class Gusd < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :gusd
     end
-    GeminiDollar = GUSD
+    GeminiDollar = Gusd
   end
 end

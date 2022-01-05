@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class FTT < Eth
+    class Ftt < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :ftt
     end
-    FTXToken = FTT
+    FTXToken = Ftt
   end
 end

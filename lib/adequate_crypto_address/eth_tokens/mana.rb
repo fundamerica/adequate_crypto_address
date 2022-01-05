@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class MANA < Eth
+    class Mana < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :mana
     end
-    Decentraland = MANA
+    Decentraland = Mana
   end
 end

@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class CETH < Eth
+    class Ceth < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :ceth
     end
-    CompoundEther = CETH
+    CompoundEther = Ceth
   end
 end

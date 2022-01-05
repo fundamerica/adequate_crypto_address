@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class MKR < Eth
+    class Mkr < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :mkr
     end
-    Maker = MKR
+    Maker = Mkr
   end
 end

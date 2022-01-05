@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class AAVE < Eth
+    class Aave < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :aave
     end
-    AAVEToken = AAVE
+    AaveToken = Aave
   end
 end

@@ -3,10 +3,10 @@
 module AdequateCryptoAddress
   module EthTokens
     # 7UT
-    class UT < Eth
+    class Ut < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :ut
     end
-    UtilityToken = UT
+    UtilityToken = Ut
   end
 end

@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class SHIB < Eth
+    class Shib < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :shib
     end
-    ShibaInu = SHIB
+    ShibaInu = Shib
   end
 end

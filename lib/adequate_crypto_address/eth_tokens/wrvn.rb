@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class WRVN < Eth
+    class Wrvn < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :wrvn
     end
-    WrappedRVN = WRVN
+    WrappedRvn = Wrvn
   end
 end

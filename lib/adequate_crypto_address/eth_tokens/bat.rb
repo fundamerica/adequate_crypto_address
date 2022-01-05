@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class BAT < Eth
+    class Bat < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :bat
     end
-    BasicAttentionToken = BAT
+    BasicAttentionToken = Bat
   end
 end

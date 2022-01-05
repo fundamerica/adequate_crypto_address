@@ -2,10 +2,10 @@
 
 module AdequateCryptoAddress
   module EthTokens
-    class CUSDT < Eth
+    class Cusdt < Eth
       ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
       ALPHABET_TYPE = :cusdt
     end
-    CompoundUSDT = CUSDT
+    CompoundUsdt = Cusdt
   end
 end
