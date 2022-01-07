@@ -1,10 +1,5 @@
 module AdequateCryptoAddress
   class Ada < Cryptos
-    extend Cryptos
-    
-    def initialize(address_string)
-      super(address_string)
-    end
 
     # if 'Byron era', starts with Icarus-style: 'Ae2' or Daedalus-style: 'DdzFF'
     # if 'Shelley era', starts with 'addr1'

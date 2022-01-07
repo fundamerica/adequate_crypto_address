@@ -1,10 +1,5 @@
 module AdequateCryptoAddress
   class Bsv < Cryptos
-    extend Cryptos
-
-    def initialize(address_string)
-      super(address_string)
-    end
 
     def valid_prefix?
       # TODO: check, BSV shares same format as btc?

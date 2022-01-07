@@ -1,10 +1,5 @@
 module AdequateCryptoAddress
   class Ltc < Cryptos
-    extend Cryptos
-
-    def initialize(address_string)
-      super(address_string)
-    end
     
     def valid_prefix?
       /\AL|M|ltc1/.match?(address)

@@ -1,10 +1,5 @@
 module AdequateCryptoAddress
   class Luna < Cryptos
-    extend Cryptos
-
-    def initialize(address_string)
-      super(address_string)
-    end
     
     def valid_prefix?
       /\Aterra/.match?(address)
