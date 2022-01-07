@@ -8,6 +8,7 @@ module AdequateCryptoAddress
 
     def valid?
       if !valid_prefix?
+        # check for valid_length? where applicable
         false
       else
         raise "Invalid address: #{address}" unless valid_prefix?
