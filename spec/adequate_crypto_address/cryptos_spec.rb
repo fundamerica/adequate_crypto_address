@@ -42,20 +42,8 @@ RSpec.describe(AdequateCryptoAddress::Cryptos) do
       end
 
       it 'validates wrong addresses' do
-        expect(described_class).to be_valid('DlCDJhnh6aGotar6b182jpzbNEyXb3C361', :doge)
-        expect(described_class).to be_valid('dBXu2kgc3xtvCUWFcxFE3r9hEYgmuaaCyD', 'DASH')
-      end
-    end
-
-    context 'Polkadot' do
-      it 'validates correct addresses' do
-        expect(described_class).to be_valid('1dvnazYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', :dot)
-        expect(described_class).to be_valid('1zxcvoYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', 'dot')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('PdvnazYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', :dot)
-        expect(described_class).not_to be_valid('9dvnazYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', 'dot')
+        expect(described_class).not_to be_valid('DlCDJhnh6aGotar6b182jpzbNEyXb3C361', :doge)
+        expect(described_class).not_to be_valid('dBXu2kgc3xtvCUWFcxFE3r9hEYgmuaaCyD', 'DASH')
       end
     end
 
@@ -68,6 +56,45 @@ RSpec.describe(AdequateCryptoAddress::Cryptos) do
       it 'validates wrong addresses' do
         expect(described_class).not_to be_valid('thisisnotEOS', :eos)
         expect(described_class).not_to be_valid('EOSthisisnot', 'eos')
+      end
+    end
+
+    context 'Litecoin' do
+      it 'validates addresses' do
+        expect(described_class).to be_valid('MGxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', :ltc)
+        expect(described_class).to be_valid('MGxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', 'ltc')
+        expect(described_class).to be_valid('LGxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', 'ltc')
+        expect(described_class).to be_valid('ltc1GxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', 'ltc')
+      end
+
+      it 'validates wrong addresses' do
+        expect(described_class).not_to be_valid('1ltcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', :ltc)
+        expect(described_class).not_to be_valid('T0tcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', :ltc)
+        expect(described_class).not_to be_valid('0xtcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', 'ltc')
+      end
+    end
+
+    context 'Lumens' do
+      it 'validates correct addresses' do
+        expect(described_class).to be_valid('GAVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2CB', :xlm)
+        expect(described_class).to be_valid('GAVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2TY', 'xlm')
+      end
+
+      it 'validates wrong addresses' do
+        expect(described_class).not_to be_valid('0AVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2CB', :xlm)
+        expect(described_class).not_to be_valid('yAVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2CB', 'xlm')
+      end
+    end
+
+    context 'Polkadot' do
+      it 'validates correct addresses' do
+        expect(described_class).to be_valid('1dvnazYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', :dot)
+        expect(described_class).to be_valid('1zxcvoYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', 'dot')
+      end
+
+      it 'validates wrong addresses' do
+        expect(described_class).not_to be_valid('PdvnazYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', :dot)
+        expect(described_class).not_to be_valid('9dvnazYM5KAetYpXoVDfqt9WFcJogKbekXVJ3Fz5oW2Dv82P', 'dot')
       end
     end
 
@@ -92,18 +119,6 @@ RSpec.describe(AdequateCryptoAddress::Cryptos) do
       it 'validates wrong addresses' do
         expect(described_class).not_to be_valid('t3rr41mxn2asrjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', :ust)
         expect(described_class).not_to be_valid('5e8ra1mxn2asrjs3tjkn2lkqa6nsnnzfuud24z8rk7n8', 'ust')
-      end
-    end
-
-    context 'Lumens' do
-      it 'validates correct addresses' do
-        expect(described_class).to be_valid('GAVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2CB', :xlm)
-        expect(described_class).to be_valid('GAVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2TY', 'xlm')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('0AVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2CB', :xlm)
-        expect(described_class).not_to be_valid('yAVF6ZB7Z7FKCWM5HEY2OV4ENPK3OSSHMFTVR4HHSBFHKW36U3FUH2CB', 'xlm')
       end
     end
   end

@@ -155,7 +155,7 @@ RSpec.describe(AdequateCryptoAddress) do
   end
 
   describe '.address' do
-    it 'returns insance' do
+    it 'returns instance' do
       expect(described_class.address('D1220A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'eth')).to be_kind_of(AdequateCryptoAddress::Eth)
     end
 
