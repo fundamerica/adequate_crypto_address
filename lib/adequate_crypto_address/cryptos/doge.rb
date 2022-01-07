@@ -1,22 +1,23 @@
 module AdequateCryptoAddress
-  class Doge
-    attr_reader :address, :raw_address
-
-    def initialize(address_string)
-      @address = address_string
-    end
-
-    def valid?(address)
-      if !valid_prefix? && !valid_length?
-        false
-      else
-        raise "Invalid address: #{address}" unless valid_prefix? && valid_length?
-      end
-    end
-
-    def address_type; end
-
-    private
+  class Doge < Cryptos
+    extend Cryptos
+    # attr_reader :address, :raw_address
+    #
+    # def initialize(address_string)
+    #   @address = address_string
+    # end
+    #
+    # def valid?(address)
+    #   if !valid_prefix? && !valid_length?
+    #     false
+    #   else
+    #     raise "Invalid address: #{address}" unless valid_prefix? && valid_length?
+    #   end
+    # end
+    #
+    # def address_type; end
+    #
+    # private
 
     def valid_prefix?
       # must begin with 'D'
