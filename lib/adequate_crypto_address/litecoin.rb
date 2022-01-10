@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module AdequateCryptoAddress
-  class Ltc < Cryptos
+  class Litecoin < Cryptos
     
     def valid_prefix?
       /\AL|M|ltc1/.match?(address)
@@ -7,5 +9,5 @@ module AdequateCryptoAddress
       # length check
     end
   end
-  Litecoin = Ltc
+  # Litecoin = Litecoin
 end

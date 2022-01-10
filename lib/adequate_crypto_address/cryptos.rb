@@ -4,8 +4,12 @@ module AdequateCryptoAddress
 
     def initialize(address_string)
       @address = address_string
+      # binding.pry
     end
 
-    alias valid? valid_prefix?
+    def valid?(address)
+      valid_prefix? ? true : false
+    end
+    # alias valid? valid_prefix?
   end
 end
