@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe(AdequateCryptoAddress::EthTokens) do
+RSpec.describe(AdequateCryptoAddress) do
   describe '.valid?' do
     context 'Ethereum' do
       it 'validates addresses' do
@@ -28,19 +28,20 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context '7EVEN UtilityToken' do
+    context 'UtilityToken' do
+      # 7EVEN Utility Token (7UT)
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :ut)
-        expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', '7UT')
+        expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'UT')
       end
 
       it 'validates wrong addresses' do
         expect(described_class).not_to be_valid('wrong', :ut)
-        expect(described_class).not_to be_valid('0xD1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', '7UT')
+        expect(described_class).not_to be_valid('0xD1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'UT')
       end
     end
 
-    context 'Aave Interest Bearing DAI' do
+    context 'AaveInterestBearingDai' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :adai)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'aDai')
@@ -52,7 +53,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Aave Interest Bearing TUSD' do
+    context 'AaveInterestBearingTUsd' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :atusd)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'aTUSD')
@@ -64,7 +65,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'AAVE Token' do
+    context 'AaveToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :aave)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'AAVE')
@@ -76,7 +77,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'AGX Coin' do
+    context 'AgxCoin' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :agx)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'AGX')
@@ -88,7 +89,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'AMP Token' do
+    context 'AmpToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :amp)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'AMP')
@@ -112,7 +113,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'AUX' do
+    context 'Aux' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :aux)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'aux')
@@ -124,7 +125,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Axie Infinity Shard' do
+    context 'AxieInfinityShard' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :axs)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'AXS')
@@ -136,7 +137,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'B21 Token' do
+    context 'B21Token' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :b21)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'b21')
@@ -160,7 +161,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Basic Attention Token' do
+    context 'BasicAttentionToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :bat)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'BAT')
@@ -172,7 +173,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Carbon USD' do
+    context 'CarbonUSD' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :cusd)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'cusd')
@@ -208,7 +209,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Co2Bit Carbon Token' do
+    context 'Co2BitCarbonToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :co2c)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'Co2C')
@@ -232,7 +233,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Compound DAI' do
+    context 'CompoundDai' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :cdai)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'cDAI')
@@ -244,7 +245,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Compound Ether' do
+    context 'CompoundEther' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :ceth)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'cETH')
@@ -256,10 +257,10 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Compound USD Coin' do
+    context 'CompoundUsdCoin' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :cusdc)
-        expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'cudc')
+        expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'cusdc')
       end
 
       it 'validates wrong addresses' do
@@ -268,7 +269,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Compound USDT' do
+    context 'CompoundUsdt' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :cusdt)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'cUSDT')
@@ -280,7 +281,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Compound Wrapped BTC' do
+    context 'CompoundWrappedBtc' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :cwbtc)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'cWBTC')
@@ -292,7 +293,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Crypto Perx' do
+    context 'CryptoPerx' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :cprx)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'CPRX')
@@ -316,7 +317,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'DAO Maker' do
+    context 'DaoMaker' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :dao)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'DAO')
@@ -340,7 +341,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'DeFi Pulse Index' do
+    context 'DeFiPulseIndex' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :dpi)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'DPI')
@@ -352,7 +353,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'DMM: USDC' do
+    context 'DmmUsdc' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :musdc)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'mUSDC')
@@ -364,7 +365,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'dYdX Token' do
+    context 'dYdXToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :dydx)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'dYdX')
@@ -388,19 +389,19 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Ether' do
-      it 'validates correct addresses' do
-        expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :eth)
-        expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'eth')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('wrong', :eth)
-        expect(described_class).not_to be_valid('0xD1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'eth')
-      end
-    end
-
-    context 'FTX Token' do
+    # context 'Ether' do
+    #   it 'validates correct addresses' do
+    #     expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :eth)
+    #     expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'eth')
+    #   end
+    #
+    #   it 'validates wrong addresses' do
+    #     expect(described_class).not_to be_valid('wrong', :eth)
+    #     expect(described_class).not_to be_valid('0xD1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'eth')
+    #   end
+    # end
+    #
+    context 'FTXToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :ftt)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'FTT')
@@ -412,7 +413,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Gemini Dollar' do
+    context 'GeminiDollar' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :gusd)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'GUSD')
@@ -424,7 +425,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'GMO Japanese Yen' do
+    context 'GmoJapaneseYen' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :gyen)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'GYEN')
@@ -436,7 +437,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Kard Coin' do
+    context 'KardCoin' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :kard)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'KARD')
@@ -448,7 +449,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'LINK' do
+    context 'Link' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :link)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'LINK')
@@ -460,7 +461,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'LODE Token' do
+    context 'LodeToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :lode)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'LODE')
@@ -484,7 +485,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'OK Blockchain' do
+    context 'OkBlockchain' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :okb)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'OKB')
@@ -496,7 +497,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Paxos Standard' do
+    context 'PaxosStandard' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :pax)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'PAX')
@@ -508,7 +509,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Polygon Matic Token' do
+    context 'PolygonMaticToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :matic)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'MATIC')
@@ -520,7 +521,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Shiba Inu' do
+    context 'ShibaInu' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :shib)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'SHIB')
@@ -532,7 +533,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Stably USD' do
+    context 'StablyUsd' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :usds)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'USDS')
@@ -568,7 +569,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Synthetix Network Token' do
+    context 'SynthetixNetworkToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :snx)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'SNX')
@@ -580,7 +581,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Test Token' do
+    context 'TestToken' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :tst)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'TST')
@@ -592,7 +593,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Tether USD' do
+    context 'TetherUsd' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :usdt)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'USDT')
@@ -604,7 +605,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'TrueUSD' do
+    context 'TrueUsd' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :tusd)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'TUSD')
@@ -628,7 +629,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'USD Coin' do
+    context 'UsdCoin' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :usdc)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'USDC')
@@ -640,7 +641,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Vemanti USD' do
+    context 'VemantiUsd' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :usdv)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'USDV')
@@ -652,7 +653,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Wrapped Bitcoin' do
+    context 'WrappedBitcoin' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :wbtc)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'WBTC')
@@ -664,7 +665,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Wrapped RVN' do
+    context 'WrappedRvn' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :wrvn)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'wRVN')
@@ -676,7 +677,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'XY Oracle' do
+    context 'XyOracle' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :xyo)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'XYO')
@@ -688,7 +689,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'ZRX' do
+    context 'Zrx' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :zrx)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'ZRX')
@@ -700,7 +701,7 @@ RSpec.describe(AdequateCryptoAddress::EthTokens) do
       end
     end
 
-    context 'Zytara USD' do
+    context 'ZytaraUsd' do
       it 'validates correct addresses' do
         expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :zusd)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', 'ZUSD')
