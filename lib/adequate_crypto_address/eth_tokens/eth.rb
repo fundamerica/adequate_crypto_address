@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  module EthTokens
+  class EthTokens
     class Eth
       attr_reader :address, :raw_address
 

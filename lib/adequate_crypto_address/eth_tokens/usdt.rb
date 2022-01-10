@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  module EthTokens
-    class Usdt < Eth
-      ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
-      ALPHABET_TYPE = :usdt
-    end
-    TetherUsd = Usdt
+  class Usdt < EthTokens
+    ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+    ALPHABET_TYPE = :usdt
   end
+  TetherUsd = Usdt
 end

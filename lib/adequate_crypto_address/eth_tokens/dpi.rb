@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  module EthTokens
-    class Dpi < Eth
-      ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
-      ALPHABET_TYPE = :dpi
-    end
-    DeFiPulseIndex = Dpi
+  class Dpi < Eth
+    ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
+    ALPHABET_TYPE = :dpi
   end
+  DeFiPulseIndex = Dpi
 end
