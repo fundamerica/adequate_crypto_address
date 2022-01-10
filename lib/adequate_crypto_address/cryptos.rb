@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AdequateCryptoAddress
   class Cryptos
     attr_reader :address, :raw_address
