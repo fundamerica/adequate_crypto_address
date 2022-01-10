@@ -6,8 +6,8 @@ module AdequateCryptoAddress
       # must begin with either the letter "q" or "p"
       # but what if it's old legacy format?
       # length check
-      /\Aa|q/.match?(address)
+      /^[pq]/.match?(address)
     end
   end
-  BitcoinSV = BSV
+  BitcoinSV = Bsv
 end
