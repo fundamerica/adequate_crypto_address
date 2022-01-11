@@ -2,7 +2,7 @@
 
 module AdequateCryptoAddress
   class Cryptos
-    attr_reader :address, :raw_address
+    attr_reader :address
 
     def initialize(address_string)
       @address = address_string
@@ -10,7 +10,7 @@ module AdequateCryptoAddress
     end
 
     def valid?(address)
-      valid_prefix? ? true : false
+      valid_prefix?
     end
     # alias valid? valid_prefix?
   end

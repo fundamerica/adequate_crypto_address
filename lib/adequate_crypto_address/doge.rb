@@ -11,7 +11,7 @@ module AdequateCryptoAddress
 
     def valid_length?
       # must be at least 34 char
-      address.to_s.length <= 34
+      address.to_s.length >= 34
     end
   end
   Dogecoin = Doge
