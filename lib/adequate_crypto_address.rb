@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# from original gem
 require 'adequate_crypto_address/utils/bech32'
 require 'adequate_crypto_address/utils/bch'
 
@@ -11,6 +12,8 @@ require 'adequate_crypto_address/dash'
 require 'adequate_crypto_address/zec'
 require 'adequate_crypto_address/ltc'
 
+# PT additions:
+# cryptocurrencies/tokens
 require 'adequate_crypto_address/cryptos'
 require 'adequate_crypto_address/ada'
 require 'adequate_crypto_address/bsv'
@@ -22,6 +25,7 @@ require 'adequate_crypto_address/luna'
 require 'adequate_crypto_address/ust'
 require 'adequate_crypto_address/xlm'
 
+# ethereum-based tokens
 require 'adequate_crypto_address/eth'
 require 'adequate_crypto_address/ut'
 require 'adequate_crypto_address/adai'
