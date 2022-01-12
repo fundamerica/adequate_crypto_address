@@ -5,13 +5,13 @@ module AdequateCryptoAddress
     class Eth
       attr_reader :address, :raw_address
 
-      def initialize(address_sring)
-        @address = normalize(address_sring)
-        @raw_address = address_sring
+      def initialize(address_string)
+        @address = normalize(address_string)
+        @raw_address = address_string
       end
 
-      def normalize(address_sring)
-        /\A0x/.match?(address_sring) ? address_sring : "0x#{address_sring}"
+      def normalize(address_string)
+        /\A0x/.match?(address_string) ? address_string : "0x#{address_string}"
       end
 
       def valid?(_type = nil)
