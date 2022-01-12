@@ -80,6 +80,6 @@ module AdequateCryptoAddress
         Digest::Keccak.new(256).digest(x)
       end
     end
-  Ethereum = Eth
+  # Ethereum = Eth
   # end
 end

@@ -2,10 +2,11 @@
 
 RSpec.describe(AdequateCryptoAddress) do
   describe '.valid?' do
-    context 'Ethereum' do
+    # context 'Ethereum' do
+    context 'Eth' do
       it 'validates addresses' do
-        expect(described_class).to be_valid('0xE37c0D48d68da5c5b14E5c1a9f1CFE802776D9FF', 'ethereum')
-        expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :ethereum)
+        expect(described_class).to be_valid('0xE37c0D48d68da5c5b14E5c1a9f1CFE802776D9FF', 'eth')
+        expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :eth)
         expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', :ETH)
         expect(described_class).to be_valid('0xc6d9d2cd449a754c494264e1809c50e34d64562b', 'ETH')
         expect(described_class).to be_valid('0x52908400098527886E0F7030069857D2E4169EE7', 'ETH')
@@ -24,7 +25,7 @@ RSpec.describe(AdequateCryptoAddress) do
       it 'validates wrong addresses' do
         expect(described_class).not_to be_valid('wrong', :ETH)
         expect(described_class).not_to be_valid('0xD1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'ETH')
-        expect(described_class).not_to be_valid('a10354276d2fC74ee91e37D085d35748613f4748', :ethereum)
+        expect(described_class).not_to be_valid('a10354276d2fC74ee91e37D085d35748613f4748', :eth)
       end
     end
 
@@ -589,7 +590,7 @@ RSpec.describe(AdequateCryptoAddress) do
 
       it 'validates wrong addresses' do
         expect(described_class).not_to be_valid('wrong', :tst)
-        expect(described_class).not_to be_valid('0xD1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'tst')
+        expect(described_class).not_to be_valid('D1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'tst')
       end
     end
 
