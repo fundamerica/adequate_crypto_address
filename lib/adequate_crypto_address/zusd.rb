@@ -2,7 +2,6 @@
 
 module AdequateCryptoAddress
   class Zusd < Eth
-    ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
     ALPHABET_TYPE = :zusd
   end
   ZytaraUsd = Zusd

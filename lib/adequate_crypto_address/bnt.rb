@@ -2,7 +2,6 @@
 
 module AdequateCryptoAddress
   class Bnt < Eth
-    ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
     ALPHABET_TYPE = :bnt
   end
   Bancor = Bnt

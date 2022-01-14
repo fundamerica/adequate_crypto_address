@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  # class EthTokens
     class Eth
       attr_reader :address, :raw_address
 
@@ -81,5 +80,4 @@ module AdequateCryptoAddress
       end
     end
   # Ethereum = Eth
-  # end
 end

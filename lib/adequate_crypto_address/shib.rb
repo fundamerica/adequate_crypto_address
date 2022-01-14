@@ -2,7 +2,6 @@
 
 module AdequateCryptoAddress
   class Shib < Eth
-    ADDRESS_TYPES = { prod: %w[], test: %w[] }.freeze
     ALPHABET_TYPE = :shib
   end
   ShibaInu = Shib

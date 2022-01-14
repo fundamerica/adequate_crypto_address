@@ -1,5 +1,4 @@
 module AdequateCryptoAddress
-  # module Stablecoins
   class Ust < Cryptos
 
     def valid_prefix?
