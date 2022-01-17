@@ -54,21 +54,6 @@ RSpec.describe(AdequateCryptoAddress) do
         expect(described_class).not_to be_valid('EOSthisisnot', 'eos')
       end
     end
-    #
-    # context 'Litecoin' do
-    #   it 'validates addresses' do
-    #     expect(described_class).to be_valid('MGxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', :ltc)
-    #     expect(described_class).to be_valid('MGxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', 'ltc')
-    #     expect(described_class).to be_valid('LGxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', 'ltc')
-    #     expect(described_class).to be_valid('ltc1GxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', 'ltc')
-    #   end
-    #
-    #   it 'validates wrong addresses' do
-    #     expect(described_class).not_to be_valid('1ltcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', :ltc)
-    #     expect(described_class).not_to be_valid('T0tcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', :ltc)
-    #     expect(described_class).not_to be_valid('0xtcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', 'ltc')
-    #   end
-    # end
 
     context 'Lumens' do
       it 'validates correct addresses' do

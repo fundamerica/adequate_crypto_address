@@ -133,6 +133,7 @@ RSpec.describe(AdequateCryptoAddress) do
 
     context 'Litecoin' do
       it 'validates addresses' do
+        expect(described_class).to be_valid('MGxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', :ltc)
         expect(described_class).to be_valid('LVg2kJoFNg45Nbpy53h7Fe1wKyeXVRhMH9', :ltc)
         expect(described_class).to be_valid('LVg2kJoFNg45Nbpy53h7Fe1wKyeXVRhMH9', 'ltc', :prod)
         expect(described_class).to be_valid('LTpYZG19YmfvY2bBDYtCKpunVRw7nVgRHW', 'LTC')
@@ -146,6 +147,10 @@ RSpec.describe(AdequateCryptoAddress) do
       end
 
       it 'validates wrong addresses' do
+        expect(described_class).not_to be_valid('1ltcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', :ltc)
+        expect(described_class).not_to be_valid('T0tcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', :ltc)
+        expect(described_class).not_to be_valid('0xtcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', 'ltc')
+
         expect(described_class).not_to be_valid('wrong', :zec)
         expect(described_class).not_to be_valid('t1Y9yhDa5XEjgfnTgZoKddeSiEN1aoLkQxq', :zcash)
         expect(described_class).not_to be_valid('t3Yz22vK5z2LcKEdg16Yv4FFneEL1zg9ojd', :ZEC)

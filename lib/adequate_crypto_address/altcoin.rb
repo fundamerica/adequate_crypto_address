@@ -56,5 +56,10 @@ module AdequateCryptoAddress
     def checksum(bytes)
       Digest::SHA256.hexdigest(Digest::SHA256.digest([bytes].pack('H*')))[0...8]
     end
+    
+    def litecoin_valid?
+      return unless type == 'Litecoin'
+      valid_prefix?
+    end
   end
 end
