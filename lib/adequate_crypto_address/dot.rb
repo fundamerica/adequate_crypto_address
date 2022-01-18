@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Dot < Cryptos
+  class Dot < Base
 
     def valid_prefix?
       /\A1/.match?(address)

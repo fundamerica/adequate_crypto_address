@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Doge < Cryptos
+  class Doge < Base
 
     def valid_prefix?
       # must begin with 'D'

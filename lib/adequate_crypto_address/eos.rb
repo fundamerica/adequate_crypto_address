@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Eos < Cryptos
+  class Eos < Base
 
     def valid_prefix?
       /^[a-z1-5]*$/.match?(address) && valid_length?

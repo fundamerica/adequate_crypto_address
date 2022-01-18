@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Ust < Cryptos
+  class Ust < Base
 
     def valid_prefix?
       /\Aterra1/.match?(address)

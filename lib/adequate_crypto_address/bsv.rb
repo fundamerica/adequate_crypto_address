@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Bsv < Cryptos
+  class Bsv < Base
 
     def valid_prefix?
       # TODO: check, BSV shares same format as btc?

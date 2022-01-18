@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Cryptos
+  class Base
     attr_reader :address
 
     def initialize(address_string)

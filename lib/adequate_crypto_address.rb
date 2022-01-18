@@ -7,7 +7,7 @@ require 'adequate_crypto_address/utils/bch'
 # require 'adequate_crypto_address/btc'
 # # PT additions:
 require 'adequate_crypto_address/eth'
-require 'adequate_crypto_address/cryptos'
+require 'adequate_crypto_address/base'
 
 Dir[File.join(__dir__, 'adequate_crypto_address', '*.rb')].sort.each { |file| require file }
 
