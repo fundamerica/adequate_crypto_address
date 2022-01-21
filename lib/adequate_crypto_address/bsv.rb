@@ -4,11 +4,11 @@ module AdequateCryptoAddress
   class Bsv < Base
 
     def valid_prefix?
-      # TODO: check, BSV shares same format as btc?
-      # must begin with either the letter "q" or "p"
-      # but what if it's old legacy format?
-      # length check
-      /^[pq]/.match?(address)
+      /^[1]/.match?(address) && valid_length?
+    end
+
+    def valid_length?
+      address.to_s.length >= 26
     end
   end
   BitcoinSV = Bsv

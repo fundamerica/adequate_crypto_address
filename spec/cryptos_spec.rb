@@ -21,8 +21,8 @@ RSpec.describe(AdequateCryptoAddress) do
 
     context 'BitcoinSV' do
       it 'validates addresses' do
-        expect(described_class).to be_valid('qzlqpln4k995wsjlhl9dcw6kacwv06ka6580wavplr', :bsv)
-        expect(described_class).to be_valid('pzlqpln4k995wsjlhl9dcw6kacwv06ka6580wavplr', 'bsv')
+        expect(described_class).to be_valid('1zlqpln4k995wsjlhl9dcw6kacwv06ka6580wavplr', :bsv)
+        expect(described_class).to be_valid('13LGR1QjYkdi4adZV1Go6cQTxFYjquhS1y', 'bsv')
       end
 
       it 'validates wrong addresses' do
