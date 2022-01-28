@@ -4,7 +4,7 @@ module AdequateCryptoAddress
   class Ust < Base
 
     def valid_prefix?
-      /\Aterra|terra1/.match?(address)
+      /(terra1[a-z0-9]{38})|(terravaloper[a-z0-9]{39})/.match?(address)
     end
     TerraUSD = Ust
   end
