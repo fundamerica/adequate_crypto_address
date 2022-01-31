@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-# # # from original gem
 require 'adequate_crypto_address/utils/bech32'
 require 'adequate_crypto_address/utils/bch'
-# require 'adequate_crypto_address/altcoin'
-# require 'adequate_crypto_address/btc'
-# # PT additions:
 require 'adequate_crypto_address/eth'
 require 'adequate_crypto_address/base'
 
