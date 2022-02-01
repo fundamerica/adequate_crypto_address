@@ -4,7 +4,7 @@ module AdequateCryptoAddress
   class Doge < Base
 
     def valid_prefix?
-      /\AD+[A-Z0-9]/.match?(address) && valid_length?
+      /\AD+[A-Z0-9]/.match?(address)
     end
 
     def valid_length?

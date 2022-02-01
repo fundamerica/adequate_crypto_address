@@ -4,7 +4,7 @@ module AdequateCryptoAddress
   class Eos < Base
 
     def valid_prefix?
-      /^[a-z1-5]*$/.match?(address) && valid_length?
+      /^[a-z1-5]*$/.match?(address)
     end
 
     def valid_length?

@@ -9,7 +9,7 @@ module AdequateCryptoAddress
     end
 
     def valid?(address)
-      valid_prefix?
+      valid_prefix? && (defined?(valid_length?) || true)
     end
   end
 end

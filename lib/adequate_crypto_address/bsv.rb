@@ -4,7 +4,7 @@ module AdequateCryptoAddress
   class Bsv < Base
 
     def valid_prefix?
-      /^[1]/.match?(address) && valid_length?
+      /^[1]/.match?(address)
     end
 
     def valid_length?
