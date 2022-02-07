@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Ltc < Base
-
+  class Ada < Base
     def valid_prefix?
-      /\AL|M|ltc1/.match?(address)
+      /\AAe2|DdzFF|addr1/.match?(address)
     end
   end
-  Litecoin = Ltc
+  Cardano = Ada
 end

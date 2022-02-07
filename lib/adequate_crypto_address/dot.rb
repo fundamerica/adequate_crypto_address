@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Ltc < Base
+  class Dot < Base
 
     def valid_prefix?
-      /\AL|M|ltc1/.match?(address)
+      /\A1/.match?(address)
     end
   end
-  Litecoin = Ltc
+  Polkadot = Dot
 end
+

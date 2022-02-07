@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Ltc < Base
+  class Xlm < Base
 
     def valid_prefix?
-      /\AL|M|ltc1/.match?(address)
+      /\AG/.match?(address)
     end
   end
-  Litecoin = Ltc
+  Lumens = Xlm
 end

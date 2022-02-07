@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 module AdequateCryptoAddress
-  class Ltc < Base
-
+  class Luna < Base
+    
     def valid_prefix?
-      /\AL|M|ltc1/.match?(address)
+      /\Aterra/.match?(address)
     end
   end
-  Litecoin = Ltc
+  Terraluna = Luna
 end
+

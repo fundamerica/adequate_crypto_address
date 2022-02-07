@@ -83,32 +83,6 @@ RSpec.describe(AdequateCryptoAddress) do
       end
     end
 
-    context 'Ethereum' do
-      it 'validates addresses' do
-        expect(described_class).to be_valid('0xE37c0D48d68da5c5b14E5c1a9f1CFE802776D9FF', 'ethereum')
-        expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :ethereum)
-        expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', :ETH)
-        expect(described_class).to be_valid('0xc6d9d2cd449a754c494264e1809c50e34d64562b', 'ETH')
-        expect(described_class).to be_valid('0x52908400098527886E0F7030069857D2E4169EE7', 'ETH')
-        expect(described_class).to be_valid('0x8617E340B3D01FA5F11F306F4090FD50E238070D', 'ETH')
-        expect(described_class).to be_valid('0xde709f2102306220921060314715629080e2fb77', 'ETH')
-      end
-
-      it 'validates without prefixes addresses' do
-        expect(described_class).to be_valid('27b1fdb04752bbc536007a920d24acb045561c26', 'ETH')
-        expect(described_class).to be_valid('5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed', 'ETH')
-        expect(described_class).to be_valid('fB6916095ca1df60bB79Ce92cE3Ea74c37c5d359', 'ETH')
-        expect(described_class).to be_valid('dbF03B407c01E7cD3CBea99509d93f8DDDC8C6FB', 'ETH')
-        expect(described_class).to be_valid('D1220A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'ETH')
-      end
-
-      it 'validates wrong addresses' do
-        expect(described_class).not_to be_valid('wrong', :ETH)
-        expect(described_class).not_to be_valid('0xD1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'ETH')
-        expect(described_class).not_to be_valid('a10354276d2fC74ee91e37D085d35748613f4748', :ethereum)
-      end
-    end
-
     context 'Ripple' do
       it 'validates addresses' do
         expect(described_class).to be_valid('rPMLwSwyyULN2acf5JKB1nj8F8Eu8pVMV8', :ripple)
@@ -142,6 +116,32 @@ RSpec.describe(AdequateCryptoAddress) do
       end
     end
 
+    context 'Eth' do
+      it 'validates addresses' do
+        expect(described_class).to be_valid('0xE37c0D48d68da5c5b14E5c1a9f1CFE802776D9FF', 'eth')
+        expect(described_class).to be_valid('0xa00354276d2fC74ee91e37D085d35748613f4748', :eth)
+        expect(described_class).to be_valid('0xAff4d6793F584a473348EbA058deb8caad77a288', :ETH)
+        expect(described_class).to be_valid('0xc6d9d2cd449a754c494264e1809c50e34d64562b', 'ETH')
+        expect(described_class).to be_valid('0x52908400098527886E0F7030069857D2E4169EE7', 'ETH')
+        expect(described_class).to be_valid('0x8617E340B3D01FA5F11F306F4090FD50E238070D', 'ETH')
+        expect(described_class).to be_valid('0xde709f2102306220921060314715629080e2fb77', 'ETH')
+      end
+
+      it 'validates without prefixes addresses' do
+        expect(described_class).to be_valid('27b1fdb04752bbc536007a920d24acb045561c26', 'ETH')
+        expect(described_class).to be_valid('5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed', 'ETH')
+        expect(described_class).to be_valid('fB6916095ca1df60bB79Ce92cE3Ea74c37c5d359', 'ETH')
+        expect(described_class).to be_valid('dbF03B407c01E7cD3CBea99509d93f8DDDC8C6FB', 'ETH')
+        expect(described_class).to be_valid('D1220A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'ETH')
+      end
+
+      it 'validates wrong addresses' do
+        expect(described_class).not_to be_valid('wrong', :ETH)
+        expect(described_class).not_to be_valid('0xD1110A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'ETH')
+        expect(described_class).not_to be_valid('a10354276d2fC74ee91e37D085d35748613f4748', :eth)
+      end
+    end
+
     context 'Zcash' do
       it 'validates addresses' do
         expect(described_class).to be_valid('t1U9yhDa5XEjgfnTgZoKddeSiEN1aoLkQxq', :zec)
@@ -159,19 +159,19 @@ RSpec.describe(AdequateCryptoAddress) do
 
     context 'Litecoin' do
       it 'validates addresses' do
+        expect(described_class).to be_valid('ltc1qsj0cssulg7klqxe6qfr4jxkvwgx824nefvc0n7', :ltc)
+        expect(described_class).to be_valid('MGxNPPB7eBoWPUaprtX9v9CXJZoD2465zN', :ltc)
         expect(described_class).to be_valid('LVg2kJoFNg45Nbpy53h7Fe1wKyeXVRhMH9', :ltc)
-        expect(described_class).to be_valid('LVg2kJoFNg45Nbpy53h7Fe1wKyeXVRhMH9', 'ltc', :prod)
         expect(described_class).to be_valid('LTpYZG19YmfvY2bBDYtCKpunVRw7nVgRHW', 'LTC')
         expect(described_class).to be_valid('Lb6wDP2kHGyWC7vrZuZAgV7V4ECyDdH7a6', 'Litecoin')
-        expect(described_class).to be_valid('mzBc4XEFSdzCDcTxAgf6EZXgsZWpztRhef', 'Litecoin', :test)
-
         expect(described_class).to be_valid('3NJZLcZEEYBpxYEUGewU4knsQRn1WM5Fkt', 'LTC')
-        expect(described_class).to be_valid('2MxKEf2su6FGAUfCEAHreGFQvEYrfYNHvL7', 'LTC', :test)
-        expect(described_class).to be_valid('QW2SvwjaJU8LD6GSmtm1PHnBG2xPuxwZFy', 'LTC', :test)
-        expect(described_class).to be_valid('QjpzxpbLp5pCGsCczMbfh1uhC3P89QZavY', 'LTC', :test)
       end
 
       it 'validates wrong addresses' do
+        expect(described_class).not_to be_valid('1ltcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', :ltc)
+        expect(described_class).not_to be_valid('T0tcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', :ltc)
+        expect(described_class).not_to be_valid('0xtcGxNPPB7eBoWPUaprtX9v9CXJZoD2465', 'ltc')
+
         expect(described_class).not_to be_valid('wrong', :zec)
         expect(described_class).not_to be_valid('t1Y9yhDa5XEjgfnTgZoKddeSiEN1aoLkQxq', :zcash)
         expect(described_class).not_to be_valid('t3Yz22vK5z2LcKEdg16Yv4FFneEL1zg9ojd', :ZEC)
@@ -181,7 +181,7 @@ RSpec.describe(AdequateCryptoAddress) do
   end
 
   describe '.address' do
-    it 'returns insance' do
+    it 'returns instance' do
       expect(described_class.address('D1220A0cf47c7B9Be7A2E6BA89F429762e7b9aDb', 'eth')).to be_kind_of(AdequateCryptoAddress::Eth)
     end
 
